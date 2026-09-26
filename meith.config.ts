@@ -19,6 +19,12 @@ import {
   defaultTheme,
   LIGHT_TOKENS,
 } from '@meith/theme-default'
+import {
+  BROWSER_THEME_COLOR as TUTORS_BROWSER_THEME_COLOR,
+  DARK_TOKENS as TUTORS_DARK_TOKENS,
+  LIGHT_TOKENS as TUTORS_LIGHT_TOKENS,
+  tutorsMeithTheme,
+} from './themes/tutors-meith/src'
 
 import { INSTALLED_PLUGINS } from './meith.plugins'
 
@@ -32,8 +38,16 @@ export default defineForumConfig({
       theme: defaultTheme,
       messages: defaultMessages,
     },
+    'tutors-meith': {
+      key: 'tutors-meith',
+      title: 'Tutors',
+      tokens: { light: TUTORS_LIGHT_TOKENS, dark: TUTORS_DARK_TOKENS },
+      browserThemeColor: TUTORS_BROWSER_THEME_COLOR,
+      theme: tutorsMeithTheme,
+      messages: defaultMessages,
+    },
   },
-  defaultTheme: 'default',
+  defaultTheme: 'tutors-meith',
 
   plugins: INSTALLED_PLUGINS,
 })
